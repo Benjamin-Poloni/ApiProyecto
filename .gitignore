@@ -1,33 +1,40 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Archivos de build de Maven
+/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Archivos de build de Gradle
+/build/
+/.gradle/
+/out/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# Archivos de configuración de IDE
+/.idea/
+/*.iml
+/.vscode/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Archivos temporales
+*.log
+*.tmp
+*.swp
 
-### VS Code ###
-.vscode/
+# Archivos de configuración local (sensible)
+
+application.yml
+*.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias descargadas por Gradle
+/.gradle/
+
+# Librerías empaquetadas localmente
+/lib/
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+
+# IntelliJ
+/out/
