@@ -17,7 +17,7 @@
 *.swp
 
 # Archivos de configuración local (sensible)
-
+application.properties
 application.yml
 *.env
 
@@ -38,3 +38,4 @@ Thumbs.db
 
 # IntelliJ
 /out/
+
