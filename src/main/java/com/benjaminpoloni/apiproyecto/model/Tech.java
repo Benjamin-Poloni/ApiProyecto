@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "tenologia")
+@Table(name = "tecnologia")
 public class Tech {
 
 
