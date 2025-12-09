@@ -1,10 +1,11 @@
-package com.benjaminpoloni.apiproyecto.model;
+package com.benjaminpoloni.apiproyecto.models;
 
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -40,10 +41,12 @@ public class Proyect {
             joinColumns = @JoinColumn(name = "proyecto"),
             inverseJoinColumns = @JoinColumn(name ="tech")
     )
+    @ToString.Exclude
     private List<Tech> tech;
 
 
     @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<ProyectImg> proyectoImagen;
 
 

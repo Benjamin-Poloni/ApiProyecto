@@ -1,6 +1,7 @@
-package com.benjaminpoloni.apiproyecto.model;
+package com.benjaminpoloni.apiproyecto.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class ProyectImg {
 
     @ManyToOne
     @JoinColumn(name = "proyecto_id")
+    @JsonIgnore
     private Proyect proyecto;
 
 }

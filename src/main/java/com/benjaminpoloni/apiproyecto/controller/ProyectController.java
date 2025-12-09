@@ -1,7 +1,7 @@
 package com.benjaminpoloni.apiproyecto.controller;
 
 
-import com.benjaminpoloni.apiproyecto.model.Proyect;
+import com.benjaminpoloni.apiproyecto.models.Proyect;
 import com.benjaminpoloni.apiproyecto.service.ProyectService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/proyecto")
 public class ProyectController {
+
     private final ProyectService proyectService;
     public ProyectController(ProyectService proyectService) {
         this.proyectService = proyectService;
@@ -29,9 +32,14 @@ public class ProyectController {
         }
     }
 
-
-    @GetMapping("ping")
-    public ResponseEntity<?> ping() {
-        return ResponseEntity.ok("pong");
+    @GetMapping("/proyectList")
+    public ResponseEntity<?> proyectList(){
+        try {
+            List<Proyect> proyectList = proyectService.findAll();
+            return ResponseEntity.ok(proyectList);
+        }catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
+
 }

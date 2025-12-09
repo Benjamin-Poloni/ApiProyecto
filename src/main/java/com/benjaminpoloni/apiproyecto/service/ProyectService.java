@@ -1,6 +1,6 @@
 package com.benjaminpoloni.apiproyecto.service;
 
-import com.benjaminpoloni.apiproyecto.model.Proyect;
+import com.benjaminpoloni.apiproyecto.models.Proyect;
 import com.benjaminpoloni.apiproyecto.repository.ProyectRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
